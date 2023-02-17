@@ -76,3 +76,9 @@ The Fisher's Exact Test shows us the odds ratio is .3534128
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+   
+Here we were analyzing the data of a drug study and trying to see if the vaccine created had any affect concerning the people who were drug users.    
+First we did a barplot and saw a visual difference between people who were infected and had taken the drug, and the people who got infected and had taken the placebo.    
+Looking at the numerical results further proved that of the people who contracted aids, about 75% had taken the placebo, while only 24% had taken the vaccine.    
+The inferential test took us even closer to look at the individuals apart of this study and showed us that considering the sample size, not that many people were infected with aids anyway. 34 of those infected had the vaccine, and 106 didn't.    
+For people who are drug users, it seems as though the vaccine will have somewhat an affect on their ability to contract aids.
