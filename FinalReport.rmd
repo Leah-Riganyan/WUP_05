@@ -51,12 +51,12 @@ Most of the people who contracted aids had taken the placebo. While the people w
    
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=druggies)
+table1 <- xtabs(~infected + treatment, data=females)
 rowPerc(table1)
 colPerc(table1)
 ```
    
-The numerical results show that of the people that contracted aids, 24% of them had taken the vaccine, while 75% had taken a placebo. Of those who didn't get infected were about equal, 47% with vaccine and 52% without. 
+The numerical results show that 58% of the women that contracted aids had taken the vaccine, while the women who took placebo was only 41%. It seems as though the vaccine is having worse effects on women.
 
 ## Inferential Results
 
