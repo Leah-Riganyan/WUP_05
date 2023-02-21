@@ -82,3 +82,89 @@ First we did a barplot and saw a visual difference between people who were infec
 Looking at the numerical results further proved that of the people who contracted aids, about 75% had taken the placebo, while only 24% had taken the vaccine.    
 The inferential test took us even closer to look at the individuals apart of this study and showed us that considering the sample size, not that many people were infected with aids anyway. 34 of those infected had the vaccine, and 106 didn't.    
 For people who are drug users, it seems as though the vaccine will have somewhat an affect on their ability to contract aids.
+
+# Females 
+   
+---
+title: "Aides Drug"
+author: "Leah Riganyan"
+date: "02/16/2023"
+output: html_document
+---
+
+```{r include=FALSE,echo=FALSE}
+require(tidyverse)
+require(tigerstats)
+triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
+```
+
+# Introduction
+
+<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
+
+A new  preventative aides drug (triUmpsal) is under test in clinical trials. Consider only the DrugUsers, does this drug seem effective?  Hint - use dplyr to obtain that subpopulation with the filter command.
+
+# Methods
+
+<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+```{r}
+females <- filter(triUmp, gender=="F")
+```
+
+
+# Results
+
+<!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+```{r}
+barchartGC(~infected + treatment,data=females)
+barchartGC(~infected + treatment,data=females, type="percent")
+
+```
+   
+It appears that female given the drug, they seem to be contracting it more than those with placebo.  
+
+### Numerical Descriptive Results
+
+<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+   
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=druggies)
+rowPerc(table1)
+colPerc(table1)
+```
+   
+The numerical results show that of the people that contracted aids, 24% of them had taken the vaccine, while 75% had taken a placebo. Of those who didn't get infected were about equal, 47% with vaccine and 52% without. 
+
+## Inferential Results
+
+<!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+   
+The inferential test shows us that from the study, that 106 contracted aids with the placebo, while 34 had the vaccine. The 1,143 people who didn't contract aids had the drug, while the other 1,289 had the placebo. The expected counts were 64 people for aids contracted with drug, and 75 for contracted with placebo. While 1,112 were expected to not contract aids with drug, and 1,289 without infection with placebo.    
+The Chi-Test says the chance of this happening is .00000000423%   
+The Fisher's Exact Test shows us the odds ratio is .3534128
+
+
+# Discussion and Conclusion
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+   
+Here we were analyzing the data of a drug study and trying to see if the vaccine created had any affect concerning the people who were drug users.    
+First we did a barplot and saw a visual difference between people who were infected and had taken the drug, and the people who got infected and had taken the placebo.    
+Looking at the numerical results further proved that of the people who contracted aids, about 75% had taken the placebo, while only 24% had taken the vaccine.    
+The inferential test took us even closer to look at the individuals apart of this study and showed us that considering the sample size, not that many people were infected with aids anyway. 34 of those infected had the vaccine, and 106 didn't.    
+For people who are drug users, it seems as though the vaccine will have somewhat an affect on their ability to contract aids.
