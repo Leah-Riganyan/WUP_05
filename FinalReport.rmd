@@ -68,9 +68,9 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
    
-The inferential test shows us that from the study, that 106 contracted aids with the placebo, while 34 had the vaccine. The 1,143 people who didn't contract aids had the drug, while the other 1,289 had the placebo. The expected counts were 64 people for aids contracted with drug, and 75 for contracted with placebo. While 1,112 were expected to not contract aids with drug, and 1,289 without infection with placebo.    
-The Chi-Test says the chance of this happening is .00000000423%   
-The Fisher's Exact Test shows us the odds ratio is .3534128
+The inferential test shows us that from the study, that 147 contracted aids with the placebo, while 210 had the vaccine. 
+The Chi-Test says the chance of this happening is .00006596%   
+The Fisher's Exact Test shows us the odds ratio is 1.543902
 
 
 # Discussion and Conclusion
@@ -137,12 +137,12 @@ It appears that female given the drug, they seem to be contracting it more than 
    
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=druggies)
+table1 <- xtabs(~infected + treatment, data=females)
 rowPerc(table1)
 colPerc(table1)
 ```
    
-The numerical results show that of the people that contracted aids, 24% of them had taken the vaccine, while 75% had taken a placebo. Of those who didn't get infected were about equal, 47% with vaccine and 52% without. 
+The numerical results show that of the people that contracted aids, 58% of them had taken the vaccine, while 41% had taken a placebo. Of those who didn't get infected were about equal, 48% with vaccine and 51% without. 
 
 ## Inferential Results
 
@@ -154,17 +154,13 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
    
-The inferential test shows us that from the study, that 106 contracted aids with the placebo, while 34 had the vaccine. The 1,143 people who didn't contract aids had the drug, while the other 1,289 had the placebo. The expected counts were 64 people for aids contracted with drug, and 75 for contracted with placebo. While 1,112 were expected to not contract aids with drug, and 1,289 without infection with placebo.    
-The Chi-Test says the chance of this happening is .00000000423%   
-The Fisher's Exact Test shows us the odds ratio is .3534128
+The inferential test shows us that from the study, that 147 contracted aids with the placebo, while 210 had the vaccine. 
+The Chi-Test says the chance of this happening is .00006596%   
+The Fisher's Exact Test shows us the odds ratio is 1.543902
 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
-   
-Here we were analyzing the data of a drug study and trying to see if the vaccine created had any affect concerning the people who were drug users.    
-First we did a barplot and saw a visual difference between people who were infected and had taken the drug, and the people who got infected and had taken the placebo.    
-Looking at the numerical results further proved that of the people who contracted aids, about 75% had taken the placebo, while only 24% had taken the vaccine.    
-The inferential test took us even closer to look at the individuals apart of this study and showed us that considering the sample size, not that many people were infected with aids anyway. 34 of those infected had the vaccine, and 106 didn't.    
-For people who are drug users, it seems as though the vaccine will have somewhat an affect on their ability to contract aids.
+
+The conclusion for the females is that this drug will increase their chances of catching aids.
